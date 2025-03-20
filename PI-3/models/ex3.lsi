@@ -1,0 +1,23 @@
+head section
+
+Integer getNumTiposEntrada()
+Integer getNumAreas()
+Integer getCosteAsignacion(Integer e, Integer a)
+Integer getAforoMaximoArea(Integer a)
+Integer getCuotaMinima(Integer e)
+
+Integer NE = getNumTiposEntrada()
+Integer NA = getNumAreas()
+
+goal section
+
+min sum(getCosteAsignacion(e, a) mat[e, a], e in 0 .. NE, a in 0 .. NA)
+
+constraints section
+
+sum(mat[e, a], e in 0 .. NE) <= getAforoMaximoArea(a), a in 0 .. NA
+sum(mat[e, a], a in 0 .. NA) >= getCuotaMinima(e), e in 0 .. NE
+
+int
+
+mat[e, a], e in 0 .. NE, a in 0 .. NA

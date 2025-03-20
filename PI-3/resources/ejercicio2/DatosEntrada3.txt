@@ -1,0 +1,12 @@
+Presupuesto = 800
+//Id_curso:Area:Coste:Relevancia:Duracion Area: 0=Tecnologia, 1=Ciencias, 2=Humanidades, 3=Matematicas, 4=Geografia
+0:0:100:5:22
+1:0:130:4:18
+2:0:90:3:24
+3:1:120:4:26
+4:1:70:3:22
+5:2:110:5:7
+6:2:80:2:21
+7:3:90:4:15
+8:4:75:3:12
+9:4:95:2:27
