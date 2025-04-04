@@ -1,0 +1,12 @@
+//ALMACENES
+A0: metroscubicosdisponibles=50;
+A1: metroscubicosdisponibles=70;
+A2: metroscubicosdisponibles=100;
+
+//PRODUCTOS
+P0 -> metroscubicosrequeridos=20; incomp=P2,P4;
+P1 -> metroscubicosrequeridos=15; incomp=P0,P3;
+P2 -> metroscubicosrequeridos=25; incomp=P5,P0;
+P3 -> metroscubicosrequeridos=12; incomp=P1,P4;
+P4 -> metroscubicosrequeridos=30; incomp=P0,P3,P5;
+P5 -> metroscubicosrequeridos=18; incomp=P2,P4;
