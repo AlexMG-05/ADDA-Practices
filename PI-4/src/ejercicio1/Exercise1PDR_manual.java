@@ -7,7 +7,7 @@ import java.util.Map;
 import us.lsi.common.List2;
 import us.lsi.common.Map2;
 
-public class Exercise1PDR {
+public class Exercise1PDR_manual {
 	public static Map<WarehouseVertex, Spm> memory;
 	public static Integer best;
 	
@@ -66,7 +66,7 @@ public class Exercise1PDR {
 		else sum = 0;
 		
 		WarehouseVertex neighbour = v.neighbor(action);
-		return acc+sum+neighbour.heuristic();
+		return acc+sum+neighbour.heur();
 	}
 	
 	public static SolucionAlmacen getSolucion() {
@@ -79,6 +79,15 @@ public class Exercise1PDR {
 			vertx = vertx.neighbor(spm.action());
 			spm = memory.get(vertx);
 		}
-		return SolucionAlmacen.create(actions);
+		return SolucionAlmacen.of(actions);
+	}
+	
+	public static void main(String[] args) {
+		Integer files= 3;
+		for (int file = 1; file <=files; file++) {
+			System.out.println("\n------------------------- ↓↓↓ Entry "+ file +" ↓↓↓ -------------------------");
+			DatosAlmacenes.iniDatos("resources/ejercicio1/DatosEntrada"+file+".txt");
+			System.out.print(Exercise1PDR_manual.search());
+		}
 	}
 }

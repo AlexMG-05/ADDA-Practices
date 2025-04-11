@@ -86,6 +86,9 @@ public class DatosAlmacenes {
 	}
 	
 	public static Boolean sonIncompatibles(Integer i, Integer j) {
+		if(i==-1 || j==-1) {
+			return false;
+		}
 		String s2 = productos.get(j).producto();
 		return productos.get(i).incompatibilidades.contains(s2);
 	}
