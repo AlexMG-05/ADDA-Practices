@@ -1,7 +1,0 @@
-Presupuesto = 400
-//Id_curso:Area:Coste:Relevancia:Duracion Area: 0=Tecnologia, 1=Ciencias, 2=Humanidades
-0:0:80:5:30
-1:0:120:4:15
-2:1:60:4:20
-3:2:190:2:22
-4:2:130:5:28
