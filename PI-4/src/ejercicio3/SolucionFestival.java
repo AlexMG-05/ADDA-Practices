@@ -1,17 +1,15 @@
 package ejercicio3;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
-import us.lsi.ag.agchromosomes.AlgoritmoAG;
-import us.lsi.ag.agstopping.StoppingConditionFactory;
+import org.jgrapht.GraphPath;
 
 import java.util.HashMap;
 
 public class SolucionFestival {
 
-    public static SolucionFestival create(List<Integer> ls) {
+    public static SolucionFestival of(List<Integer> ls) {
         return new SolucionFestival(ls);
     }
 
@@ -19,23 +17,28 @@ public class SolucionFestival {
     private Map<Integer, Integer> solucion;
     private Double costeTotal;
     private int unidadesTotales;
+    private List<Integer> path;
 
     private SolucionFestival(List<Integer> ls) {
-    	numAsignaciones = ls.size();
     	solucion = new HashMap<>();
     	costeTotal = 0.0;
     	unidadesTotales = 0;
     	
-    	for(int i =0;i<ls.size();i++) {
+    	for(int i = 0;i<ls.size();i++) {
 			Integer aforoAreaTipo = ls.get(i);
 			Integer currentType = i / DatosFestival.getNumAreas();
 			Integer currentArea = i % DatosFestival.getNumAreas();
-    		costeTotal += DatosFestival.getCosteAsignacion(currentType, currentArea);
+    		costeTotal += ls.get(i)*DatosFestival.getCosteAsignacion(currentType, currentArea);
     		unidadesTotales += aforoAreaTipo;
     		solucion.put(i, aforoAreaTipo);
     	}
-    	
     }
+    public static SolucionFestival of(GraphPath<FestivalVertex, FestivalEdge> path) {
+		List<Integer> ls = path.getEdgeList().stream().map(e -> e.action()).toList();
+		SolucionFestival res = of(ls);
+		res.path = ls;
+		return res;
+	}
 
     @Override
     public String toString() {
