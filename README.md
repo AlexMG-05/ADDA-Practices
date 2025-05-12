@@ -1,4 +1,5 @@
 # ADDA-Individual Practices
+<a href="https://github.com/silentsoft/hits"><img src="https://hits.sh/github.com/AlexMG-05.svg?style=for-the-badge&color=3399ff&labelColor=000000&logo=github" alt="Hits"></a>
 
 Proposed solutions for the Individual Practices from Data-Analysis and Algorithms-Design ADDA course at [Universidad de Sevilla](https://www.us.es/)
 
@@ -10,3 +11,5 @@ To work with recursive data types, graphs, linear programming, etc, I make use o
 https://github.com/migueltoro/adda_v4
 
 Acknowledgment to [amoraschi](https://github.com/amoraschi) and [RodriguezLaraRafa](https://github.com/RodriguezLaraRafa), this wouldn't have been possible if it weren't for their help.
+
+
